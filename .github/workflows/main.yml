@@ -32,7 +32,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: ${{ matrix.directory }}
-          file: ${{ matrix.directory }}Dockerfile
+          file: ${{ matrix.directory }}/codes/Dockerfile
           push: true
           tags: ${{ matrix.image }}:${{ env.VERSION }}
 
@@ -45,8 +45,8 @@ jobs:
       - name: Update deployments
         run: |
           eval $(ssh-agent -s)
-          ssh-add - <<< "${{ secrets.GH_PRIVATE_SSH_KEY }}"
-          git clone git@github.com:fhayata/argocd-infra.git
+          ssh-add - <<< "${{ secrets.GCP_PRIVATE_KEY }}"
+          git clone git@github.com:fhayata/Projet-un.git
           cd  argocd-infra
           NEW_TAG=$(echo $GITHUB_SHA | cut -c1-7)
           sed -i "s|hayataf/argocd-code\(:[a-zA-Z0-9_.-]*\)\?|hayataf/argocd-code:${NEW_TAG}|g" deployment-code.yaml
