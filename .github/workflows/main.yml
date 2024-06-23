@@ -44,6 +44,7 @@ jobs:
     steps:
       - name: Update deployments
         run: |
+          cd
           echo $(ls .)
           # NEW_TAG=$(echo $GITHUB_SHA | cut -c1-7)
           # sed -i "s|hayataf/projet-un\(:[a-zA-Z0-9_.-]*\)\?|hayataf/projet-un:${NEW_TAG}|g" k8s/python-app.yaml
