@@ -44,9 +44,7 @@ jobs:
     steps:
       - name: Update deployments
         run: |
-          eval $(ssh-agent -s)
-          ssh-add - <<< "${{ secrets.GCP_PRIVATE_KEY }}"
-          git clone git@github.com:fhayata/Projet-un.git
+          git clone https://github.com/fhayata/Projet-un.git
           cd  Projet-un
           NEW_TAG=$(echo $GITHUB_SHA | cut -c1-7)
           sed -i "s|hayataf/Projet-un\(:[a-zA-Z0-9_.-]*\)\?|hayataf/Projet-un:${NEW_TAG}|g" k8s/python-app.yaml
