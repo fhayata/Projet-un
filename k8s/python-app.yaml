@@ -4,6 +4,7 @@ metadata:
   name: projet1-app
   labels:
     app.kubernetes.io/name: python-app
+    pipeline: github
 spec:
   replicas: 2
   selector:
