@@ -9,7 +9,7 @@ spec:
     namespace: default
   project: default
   source:
-    repoURL: https://github.com/fhayata/Projet-un.git
+    repoURL: https://github.com/fhayata/application-a.git
     targetRevision: main
     path: .
   syncPolicy:
