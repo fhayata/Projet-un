@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: projet1-app
+  name: appa
   labels:
     app.kubernetes.io/name: python-app
     pipeline: github
@@ -11,10 +11,14 @@ spec:
   selector:
     matchLabels:
       app.kubernetes.io/name: python-app
+      pipeline: github
+      app: python-app
   template:
     metadata:
       labels:
         app.kubernetes.io/name: python-app
+        pipeline: github
+        app: python-app
     spec:
       containers:
         - name: application
