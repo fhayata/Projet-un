@@ -21,8 +21,8 @@ spec:
         app: appb-gitlab
     spec:
       containers:
-        - name: application
-          image: hayataf/projet-un
+        - name: application-b
+          image: hayataf/gitlab-app
           resources:
             requests:
               memory: "50Mi"
