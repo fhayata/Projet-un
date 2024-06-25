@@ -3,6 +3,9 @@ kind: NetworkPolicy
 metadata:
   name: appa-appb
   namespace: default
+  labels:
+    app: projet-1
+    pipeline: github
 spec:
   podSelector:
     matchLabels:
