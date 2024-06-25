@@ -7,7 +7,7 @@ metadata:
     pipeline: github
     app: python-app
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
       app.kubernetes.io/name: python-app
