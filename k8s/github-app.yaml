@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
         - name: application
-          image: hayataf/projet-un
+          image: hayataf/projet-un:6e2ba87
           resources:
             requests:
               memory: "50Mi"
