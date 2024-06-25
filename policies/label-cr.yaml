@@ -20,4 +20,4 @@ spec:
       - key: app
         allowedRegex: "[a-zA-Z0-9-_]"
       - key: pipeline
-        allowedRegex: "github|gilab"
+        allowedRegex: "github|gitlab"
