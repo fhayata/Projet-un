@@ -10,16 +10,16 @@ spec:
   podSelector:
     matchLabels:
       app: python-app
-    policyTypes:
-      - Ingress
-      - Egress
-    ingress:
-      - from:
-        - podSelector:
-            matchLabels:
-              app: appb-gitlab
-    egress:
-      - to:
-        - podSelector:
-            matchLabels:
-              app: appb-gitlab
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: appb-gitlab
+  egress:
+    - to:
+      - podSelector:
+          matchLabels:
+            app: appb-gitlab
