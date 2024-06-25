@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-gitlab
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  project: default
+  source:
+    repoURL: https://gitlab.com/k8s-gcp/code-python.git
+    targetRevision: main
+    path: .
+  syncPolicy:
+    automated:
+      selfHeal: true
+      prune: true
