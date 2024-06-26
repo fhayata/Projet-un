@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: app-b
-        image: app-b:latest
+        image: hayataf/app-b
         ports:
         - containerPort: 5001
         resources:
