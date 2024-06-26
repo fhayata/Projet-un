@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: app-a
-        image: hayataf/app-a
+        image: hayataf/app-a:ee994b4
         ports:
         - containerPort: 5000
         resources:
