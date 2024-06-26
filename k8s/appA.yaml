@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-a
+  labels:
+    pipeline: github
+    app: app-a
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-a
+      pipeline: github
+  template:
+    metadata:
+      labels:
+        app: app-a
+        pipeline: github
+    spec:
+      containers:
+      - name: app-a
+        image: app-a:latest
+        ports:
+        - containerPort: 5000
+        resources:
+            requests:
+              memory: "100Mi"
+              cpu: "200m"
+            limits:
+              memory: "150Mi"
+              cpu: "250m"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-a-service
+spec:
+  selector:
+    app: app-a
+    pipeline: github
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+
